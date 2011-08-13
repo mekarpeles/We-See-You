@@ -1,7 +1,4 @@
 import web
-#import subapps.weseeyou_app as weseeyou_app
-import json
-import urllib
 
 GLOBALNAME = "We See You"
 
