@@ -1,0 +1,225 @@
+html {
+    margin-top: 0px;
+    padding: 0px;
+    background-color: #789;
+    font-family: helvetica;
+}
+
+#main_nav {
+/*
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 25px;
+  width: 100%;
+  border-bottom: 1px solid #bcd;
+  color: #aaa;
+  */
+}
+
+ul.main_nav {
+    padding-left: 5px;
+    padding-top: 5px;
+    list-style-type: none; 
+    display: inline;
+}
+
+ul.main_nav li {
+    display: inline;
+    padding-right: 10px;
+}
+
+ul.main_nav li a {
+}
+
+
+#window {
+    min-width: 800px;
+    width: 90%;
+    min-height: 400px;
+    margin: 0px auto 10px auto;
+}
+
+#document {
+    background-color: #fff;
+    min-width: 600px;
+    width: 80%;
+    min-height: 500px;
+    float:left;
+}
+
+.paragraph {
+    
+}
+
+#toolbar {
+    padding-top: 5px;
+    border-bottom: 1px #bcd solid;
+    font-size: 14px;
+    height: 25px;
+    width: 100%;
+    background-color: #cde;
+}
+
+ul.toolbar_nav {
+    padding-left: 5px;
+    padding-top: 5px;
+    list-style-type: none; 
+    display: inline;
+}
+
+ul.toolbar_nav li {
+    display: inline;
+    padding-right: 10px;
+}
+
+ul.toolbar_nav li a {
+}
+
+.document_selector {
+    border: none;
+    background-color: #cde;
+    
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 1em;
+}
+
+#browser {
+
+}
+
+#hackpad {
+    margin-top: 30px;
+    min-width: 200px;
+    float: right;
+    background-color: #fff;
+    min-width: 100px;
+    min-height: 200px;
+    width: 20%;
+}
+
+#hackpad_title {
+
+    text-align: center;
+    background-color: #049;
+    border-bottom: 1px solid #bcd;
+    color: #fff;
+    padding: 3px;          
+}
+
+.hackpad_feature_focus {
+    background-color: #08f;
+    border-bottom: 1px solid #bcd;
+    color: #eee;
+    padding: 3px;
+}
+
+.hackpad_feature_sec {
+    padding: 2px;
+}
+
+#docbody {
+    min-height: 500px;
+}
+
+.hackpad_feature_bg {
+    background-color: #888;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 3px;
+}
+
+.hackpad_feature_link {
+    color: #eee;
+    text-decoration: none;
+}
+
+// Result Categories
+.suggestions {
+
+} 
+
+// Fact Verification
+
+.toolbar_document_title {
+    
+    color: #049;
+}
+
+// Result Types
+img.result_image {
+
+}
+
+a.result_url {
+
+}   
+
+table {
+    font-size: 12px;
+}
+
+p {
+    font-size: 12px;
+    margin: 0px;
+    padding: 5px;
+}
+
+a {
+    color: #08f;
+}
+
+div {
+    font-size: 12px;
+}
+
+th {
+    color: #888;
+    font-weight: normal;
+}
+
+.status_editing {
+    color: #3c4;
+}
+
+.status_offline {
+    color: #999;
+}
+
+.status_viewing {
+    color: #bb0;
+}
+
+.roundcorners_top {
+    -moz-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -khtml-border-bottom-right-radius: 0px;
+    -khtml-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+}
+
+/* NER stuff */
+.entity_type_title {
+    font-weight: bold;
+}
+
+.entity_results {
+    margin: 1em 0;
+    padding: 0 0 0 1em;
+}
+
+.entity_results li {
+    display: block;
+}
