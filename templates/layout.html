@@ -1,0 +1,11 @@
+$def with (content)
+
+<html>
+    <head>
+        <title>$content.get('title', 'We See You!')</title>
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    </head>
+    <body>
+        $:content
+    </body>
+</html>
