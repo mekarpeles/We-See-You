@@ -10,16 +10,10 @@ handlers:
 - url: /index\.html
   script: main.py
 
-- url: /stylesheets
-  static_dir: stylesheets
+- url: /static/css
+  static_dir: static/css
 
 - url: /(.*\.(gif|png|jpg))
   static_files: static/\1
   upload: static/images(.*\.(gif|png|jpg))
 
-- url: /admin/.*
-  script: admin.py
-  login: admin
-
-- url: /.*
-  script: not_found.py

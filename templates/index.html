@@ -6,13 +6,18 @@ $def with ()
     <title>Hackpad</title> 
     <link rel="shortcut icon" href="http://www.baybo.net:1999/static/ico/babolog.ico" type="image/x-icon" /> 
     <link type="text/css" rel="stylesheet" media="screen" href="/static/css/hackpad.css" /> 
+
+    <!-- Zemanta -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="http://friedcellcollective.net/js/jQuery.windowName/jQuery.windowName.plugin.js"></script>    
+
     <script type="text/javascript" src="http://point-at-infinity.org/jssha256/jssha256.js"></script> 
-    <script type="text/javascript" src="http://www.baybo.net:1999/static/js/hackpad_bing.js"></script> 
-    <script type="text/javascript" src="http://www.baybo.net:1999/static/js/hackpad_google.js"></script> 
-    <script type="text/javascript" src="http://www.baybo.net:1999/static/js/hackpad_doCI.js"></script> 
-    <script type="text/javascript" src="http://www.baybo.net:1999/static/js/hackpad_baybo.js"></script> 
-    <script type="text/javascript" src="http://www.baybo.net:1999/static/js/hackpad.js"></script> 
+    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_bing.js"></script> 
+    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_google.js"></script> 
+    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_doCI.js"></script> 
+    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_baybo.js"></script> 
+    <!-- <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_zemanta.js"></script> -->
+    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad.js"></script> 
   </head> 
  
   <body> 
@@ -67,29 +72,11 @@ $def with ()
         <ol id="results"> 
  
         </ol> 
- 
-        <!--
-        <form name="searcher" action="http://www.google.com/search"  method="GET">
-          <input type="text" name="q" value="search" 
-                 onClick="if(this.value==='search') { this.value=''; };" 
-                 onBlur="if(!this.value) { this.value='search'; };" />
-          <input type="submit" value="search" />
-        </form>
-        --> 
-        <!--
-        <form action="http://www.google.com/search" method="GET">       
-          <input type="hidden" name="q" id="dynaSearch" />
-          <input type="submit" value="search" />
- 
-             <img class="result_img" id="result_img_0" src=""/>
-             <a href="http://baybo.it"></a>
-             --> 
-          
-          <!--
-             <p>Why these results?</p>
-          <p>We noticed words within your paragraph like... <pre>hackpack</pre></p>
-          --> 
-        </form> 
+
+	<ol id="results2">
+
+	</ol>
+
  
     <div class="hackpad_feature_focus"> 
         <a href="" class="hackpad_feature_link">&raquo; Document Entities:</a> 

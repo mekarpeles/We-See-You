@@ -26,8 +26,7 @@ function doCI(queryString, service, type) {
             type: 'POST',
             url: endpoint_url,
             success: function(data) {
-                $(data).find("results").children().each(function(){
-                    console.log(this);
+                $(data).find("results").children().each(function(){			
                     $("#list_" + this.nodeName).append("<li>" + recognize($(this).text()) + "</li>");
                 });
             },

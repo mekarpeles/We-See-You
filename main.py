@@ -1,6 +1,7 @@
 import web
+import urllib
 
-GLOBALNAME = "We See You"
+GLOBALNAME = "Blogachoo"
 
 web.config.debug == True
 
@@ -9,7 +10,8 @@ if web.config.debug:
 
 # url mapping
 urls = (
-    '/?', "Index", #weseeyou_app.subapp,
+    '/req/?',  "Request",
+    '/?',      "Index", #weseeyou_app.subapp,
     '/(.+)/?', "Error",
     )
 
@@ -40,6 +42,32 @@ app.add_processor(web.loadhook(session_hook))
 class Index:
     def GET(self):
         return render.index()
+
+class Request:
+    def GET(self):
+        i = web.input()
+        return self.requestGET(i.q)
+
+    def POST(self):
+        i = web.input()
+        return self.requestPOST(i.q)
+			
+    def requestGET(self, query):
+        url = urllib.unquote(query)
+        response = urllib.urlopen(url)
+        result = response.read()
+        response.close()
+        return result
+
+    def requestPOST(self, query):
+        url = urllib.unquote(query)
+        base = url.split("?")[0]
+        data = str(url.split("?")[-1])
+        response = urllib.urlopen(url, data)
+        result = response.read()
+        response.close()
+        return result
+
 
 class Error:
     def GET (self, err):
