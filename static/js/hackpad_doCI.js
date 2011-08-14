@@ -5,7 +5,7 @@ function doCI(queryString, service, type) {
      */
 
     // Config Vars
-    var bump_url = 'http://www.baybo.net:1999/req?q=';
+    var bump_url = 'http://localhost:8080/req?q=';
     var CI_PUBLICACCESSID = '4f8a395ffd607d13cddff9455de91cadd508e894879ee3c66f440abc37f6f09c';
     var CI_SECRET = 'fa50785c2313d388b15268561ac798797dbff040fd616e589cd8423d4894a122';
     var CI_ENDPOINT = 'http://us.ws.complexityintelligence.com/rest/nlp/ner/v1';
