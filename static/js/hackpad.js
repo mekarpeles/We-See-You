@@ -48,6 +48,7 @@ $(function() {
 			bing_search(q);
 			youtube_search(q);
 			doCI(q, 'nlp', 'ner');
+			//face(q)
 			//zemanta(q);
 		    }
 		};
@@ -57,10 +58,11 @@ $(function() {
 		    if (q.length > 0) {
 			bing_search(q);
 			youtube_search(q);
+			//face(q)
 			doCI(q, 'nlp', 'ner');
 			//zemanta(q);
 		    }
 		}
-
+		
 	    }); // close on selection listener
     });  // close DOM ready

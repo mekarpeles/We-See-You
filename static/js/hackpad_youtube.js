@@ -5,7 +5,7 @@ function youtube_search(query) {
 
     $.getJSON(url, function(data) {
 	    try {
-		$('#youtube_results').append("<li>" + data + "</li>");
+		$('#youtube_results').append("<li class='thumbnail'><a href='"+data['url']+"'><img width=90 src='" + data['thumb']  + "' /></a></li>");
 	    } catch (err) {
 		//
 	    }

@@ -1,0 +1,14 @@
+<h1>Here's a list of APIs</h1>
+
+<p><strong>Bing</strong>
+  <a href="/api/bing/query">/api/bing/query</a>
+</p>
+
+<p><strong>Bing Imges</strong> 
+  <a href="/api/bing_image/query">/api/bing_image/query</a>
+</p>
+
+<p><strong>Youtube Top Result</strong>
+  <a href="/api/youtube/query">/api/bing/youtube</a>
+</p>
+

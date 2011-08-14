@@ -8,11 +8,17 @@ import httplib
 #url_root = /farmville
 urls = ( "/(.+)/(.+)/(.+)/?",  "Error",
          "/(.+)/(.+)/?",  "Api",
+         "/?", "Docs",
          "/(.+)/?", "Error",)
 
 #===============================================================#
 # Api
 #===============================================================#
+class Docs:
+    def GET(self):
+        render = web.ctx.session['render']
+        return render.apis()
+
 class Api:
     def GET(self, service, query):
         """
@@ -73,7 +79,12 @@ class Api:
 
     def api_embedly_youtube(self, query):
         youtube = self.api_youtube(query, dump=False)
-        return json.dumps(json.loads(self.api_embedly(youtube))[0]['html'])
+        e = json.loads(self.api_embedly(youtube))[0]
+        data = {}
+        data['html'] = e['html']
+        data['thumb'] = e['thumbnail_url']
+        data['url'] = e['url']
+        return json.dumps(data)
 
     def api_box(self, query):
         pass

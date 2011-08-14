@@ -7,14 +7,24 @@ $def with ()
         <li class="toolbar_document_title"> 
           <select class="document_selector"> 
             <option selected="selected">My Hackpad Document</option> 
+	  </select>
         </li> 
-        <li><a href="">Save</a></li> 
-        <li><a href="">Export &amp; Download</a></li> 
+        <li><input type='text' />
+	  <input type='submit' value="Save on the cloud with Box.net"/></li> 
       </ul> 
     </div>           
     
     <div id="browser"> 
-      <textarea class="content" onmouseup="" id="docbody"></textarea> 
+      <textarea class="content" onmouseup="" id="docbody">
+	What's new?
+	- Check out our API aggregator!
+	- Chat
+
+	Coming soon:
+	- Find faces in youtube thumbnails
+</textarea> 
+      <div id="injectable">
+      </div>
       <span id="buffer" style="display: hidden;"></span> 
     </div> 
   </div> 
@@ -60,7 +70,7 @@ $def with ()
     
     <div class="hackpad_feature_focus"> 
       <a href="" class="hackpad_feature_link"> 
-        &laquo; Youtube Videos
+        &raquo; Youtube Videos
       </a> 
     </div>
     <div class="hackpad_feature_sec">
@@ -68,7 +78,7 @@ $def with ()
 
       </ol>
     </div> 
-
+    <!--
     <div id="" class="hackpad_feature_focus"> 
       <a href="" class="hackpad_feature_link"> 
         &laquo; Related Images
@@ -82,7 +92,7 @@ $def with ()
         &laquo; Document Formatting
       </a> 
     </div> 
-    
+    -->
     <div id="" class="hackpad_feature_focus"> 
       <a href="" class="hackpad_feature_link"> 
         &raquo; &beta;eta Hackpad Features
