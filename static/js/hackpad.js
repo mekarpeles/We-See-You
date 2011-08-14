@@ -45,9 +45,9 @@ $(function() {
 		    var q = get_last_phrase('\n');
 
 		    if (q.length > 0) {
-			//doCI(q, 'nlp', 'ner');
 			bing_search(q);
-			//youtube_search(q);
+			youtube_search(q);
+			doCI(q, 'nlp', 'ner');
 			//zemanta(q);
 		    }
 		};
@@ -55,9 +55,9 @@ $(function() {
 		    var q = get_last_phrase(DELIM_CHAR_CODES[event.which]);
 
 		    if (q.length > 0) {
-			//doCI(q, 'nlp', 'ner');
 			bing_search(q);
-			//youtube_search(q);
+			youtube_search(q);
+			doCI(q, 'nlp', 'ner');
 			//zemanta(q);
 		    }
 		}

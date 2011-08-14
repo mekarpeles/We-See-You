@@ -37,15 +37,13 @@ class Api:
         except:
             return None
 
-    def api_youtube(self, query):
+    def api_youtube(self, query, dump=True):
         url = urllib.unquote("https://gdata.youtube.com/feeds/api/videos?alt=json&q=" + query.replace(" ", "+") + "&orderby=relevance&max-results=10&v2")
-        return json.loads(self.api_exec(url))["feed"]["entry"]
-        
+        data = json.loads(self.api_exec(url))["feed"]["entry"][0]["mediagroup"]["mediacontent"][0]['url']
 
-    def api_embedly(self, query):
-        """XXX TODO"""
-        url = urllib.unquote("http://api.embed.ly/1/oembed?url=http%3A%2F%2Fwww.")
-        return self.api_exec(url)
+        if dump:
+            return json.dumps(data)
+        return data
 
     def api_bing(self, query, sources="web"):
         url = urllib.unquote("http://api.search.live.net/json.aspx?Appid=38AF132A8C9243F6662C561D0890DDB2A5CA309C&query=" + query + "&sources=" + sources)
@@ -68,14 +66,14 @@ class Api:
         """API for complexityintelligence NLP"""        
         pass
 
-    def api_embedly(self, query, width=400):
+    def api_embedly(self, query, width=150):
         api_key = "426ffa42c62711e0b9a74040d3dc5c07"
-        url = "http://api.embed.ly/1/oembed?key=" + api_key + "&maxwidth=" + width + "&urls=" + query
+        url = "http://api.embed.ly/1/oembed?key=" + api_key + "&maxwidth=" + str(width) + "&urls=" + query
         return self.api_exec(url)
 
     def api_embedly_youtube(self, query):
-        youtube = self.api_youtube(query)
-        return self.api_embedly(query)
+        youtube = self.api_youtube(query, dump=False)
+        return json.dumps(json.loads(self.api_embedly(youtube))[0]['html'])
 
     def api_box(self, query):
         pass

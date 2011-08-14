@@ -4,14 +4,10 @@ function youtube_search(query) {
     var url = "http://localhost:8080/api/embedly_youtube/" + query;
 
     $.getJSON(url, function(data) {
-        $.each(data.feed.entry, function(key, val) {
-            if (val != null) {
-		try {
-		    $('#youtube_results').append("<li><a href='" + val + "'>" + vidurl + "</a></li>");
-		} catch (err) {
-		    //
-		}
-            }	    
-        });
+	    try {
+		$('#youtube_results').append("<li>" + data + "</li>");
+	    } catch (err) {
+		//
+	    }
     });           
 } 
