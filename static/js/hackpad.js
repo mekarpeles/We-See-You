@@ -1,37 +1,3 @@
-
-
-/*
-function doSearch(queryString) 
-{
-    var provider = 'http://www.google.com/search?q=';
-    var query = urlQuote(queryString);
-    var grsp = $.get(searchQuery, function(data) {
-	    $('.result').html(data);
-	    console.log('Searching for x in google');
-	});  
-}
-
-function urlQuote(inputString) 
-{
-    return inputString;
-}
-
-function selection()
-{
-    var txt = '';
-    if (window.getSelection) {
-	txt = window.getSelection();
-    } else if (document.getSelection) {
-	txt = document.getSelection();
-    } else if (document.selection) {
-	txt = document.selection.createRange().text;
-    } else {
-	return;
-    }
-    return txt;
-}	
-*/
-
 DELIM_CHAR_CODES = {
     33: "!",
     63: "?",
@@ -68,20 +34,20 @@ function get_last_phrase(delim) {
     var last_sentence = sentences[sentences.length - 1];
     $("#buffer").html(jQuery.trim(last_sentence));
     var q = $("#buffer").html();
-    console.log("last sentence: " + last_sentence);
     return q
 }
 
 $(function() {	
+	var keyRx = /[a-z0-9]{24}/;
 	$('#docbody').keypress(function(event) {
 	
-		if(event.which == '13') {		    
-	    
+		if(event.which == '13') {	    
 		    var q = get_last_phrase('\n');
 
 		    if (q.length > 0) {
-			bing_search(q);
 			doCI(q, 'nlp', 'ner');
+			bing_search(q);
+			zemanta(q);
 		    }
 		};
 		if (event.which in DELIM_CHAR_CODES) {
@@ -90,6 +56,7 @@ $(function() {
 		    if (q.length > 0) {
 			doCI(q, 'nlp', 'ner');
 			bing_search(q);
+			//zemanta(q);
 		    }
 		}
 
