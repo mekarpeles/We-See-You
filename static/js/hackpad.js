@@ -56,7 +56,7 @@ $(function() {
 		    if (q.length > 0) {
 			doCI(q, 'nlp', 'ner');
 			bing_search(q);
-			//youtube_search(q);
+			youtube_search(q);
 			//zemanta(q);
 		    }
 		}

@@ -1,5 +1,6 @@
 import web
 import urllib
+import json
 
 GLOBALNAME = "Blogachoo"
 
@@ -10,9 +11,10 @@ if web.config.debug:
 
 # url mapping
 urls = (
-    '/req/?',  "Request",
-    '/?',      "Index", #weseeyou_app.subapp,
-    '/(.+)/?', "Error",
+    '/api/(.+)/(.+)/?', "Api",
+    '/req/?',           "Request",
+    '/?',               "Index", #weseeyou_app.subapp,
+    '/(.*)',            "Error",
     )
 
 app = web.application(urls, globals())
@@ -42,6 +44,17 @@ app.add_processor(web.loadhook(session_hook))
 class Index:
     def GET(self):
         return render.index()
+
+
+class Api:
+    def GET(self, service, query):
+        if service == "youtube":
+            url = "https://gdata.youtube.com/feeds/api/videos?alt=json&q=" + query.replace(" ", "+") + "&orderby=relevance&max-results=10&v2";
+
+        url = urllib.unquote(url)
+        response = urllib.urlopen(url)
+        data = response.read().replace("$","")
+        return data
 
 class Request:
     def GET(self):

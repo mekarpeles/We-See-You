@@ -7,15 +7,17 @@ function bing_search(query, source) {
 	       query + "&sources=" + source);
 
     $.get(url, function(data) {
-	    console.log(jQuery.parseJSON(data));
-            var entry = jQuery.parseJSON(data)['SearchResponse']['Web']['Results'][0];
-            var res = "<li><a href='http://" + entry['DisplayUrl'] + "'>";
-            res += entry['Title'] + "</a></li>";
+	    if (jQuery.parseJSON(data)) {
+
+		var entry = jQuery.parseJSON(data)['SearchResponse']['Web']['Results'][0];
+		var res = "<li><a href='http://" + entry['DisplayUrl'] + "'>";
+		res += entry['Title'] + "</a></li>";
             
-            if (data['Description']) {
-                res += "<li>" + jQuery.parseJSON(data) + "</li>";
-                //res += "<li>" + entry['Description'] + "</li>";
-            }
-            $('#results').append(res);
+		if (data['Description']) {
+		    res += "<li>" + jQuery.parseJSON(data) + "</li>";
+		    //res += "<li>" + entry['Description'] + "</li>";
+		}
+		$('#results').append(res);
+	    }
 	});
 }
