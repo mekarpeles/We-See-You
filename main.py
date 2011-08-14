@@ -1,6 +1,7 @@
 import web
 import urllib
-import json
+import simplejson as json
+from subapps import api_app as api_app
 
 GLOBALNAME = "Blogachoo"
 
@@ -11,7 +12,7 @@ if web.config.debug:
 
 # url mapping
 urls = (
-    '/api/(.+)/(.+)/?', "Api",
+    '/api',             api_app.subapp,
     '/req/?',           "Request",
     '/?',               "Index", #weseeyou_app.subapp,
     '/(.*)',            "Error",
@@ -45,17 +46,6 @@ class Index:
     def GET(self):
         return render.index()
 
-
-class Api:
-    def GET(self, service, query):
-        if service == "youtube":
-            url = "https://gdata.youtube.com/feeds/api/videos?alt=json&q=" + query.replace(" ", "+") + "&orderby=relevance&max-results=10&v2";
-
-        url = urllib.unquote(url)
-        response = urllib.urlopen(url)
-        data = response.read().replace("$","")
-        return data
-
 class Request:
     def GET(self):
         i = web.input()
@@ -84,7 +74,7 @@ class Request:
 
 class Error:
     def GET (self, err):
-        return "Uh oh, you can see me?! 404"
+        return "<h1>404 - Congratulations!</h1><p>You got 2, <span style='color: green;'>200 OK</span> responses and 4 bonus points!</p><img src='http://generationbass.com/wp-content/uploads/2009/09/Results-winner.jpg' width=175 />"
 
 if __name__ == "__main__":
     if web.config.debug:

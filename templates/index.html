@@ -1,153 +1,100 @@
 $def with ()
-
  
-<html> 
-  <head> 
-    <title>Hackpad</title> 
-    <link rel="shortcut icon" href="http://www.baybo.net:1999/static/ico/babolog.ico" type="image/x-icon" /> 
-    <link type="text/css" rel="stylesheet" media="screen" href="/static/css/hackpad.css" /> 
-
-    <!-- Zemanta -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
-    <script type="text/javascript" src="http://friedcellcollective.net/js/jQuery.windowName/jQuery.windowName.plugin.js"></script>    
-
-    <script type="text/javascript" src="http://point-at-infinity.org/jssha256/jssha256.js"></script> 
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_bing.js"></script> 
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_google.js"></script> 
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_doCI.js"></script> 
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_baybo.js"></script> 
-    <!-- <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_zemanta.js"></script> -->
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad_youtube.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/static/js/hackpad.js"></script> 
-  </head> 
- 
-  <body> 
- 
-    <div id="window"> 
-      <div id="document" class="roundcorners_top"> 
-        <div id="toolbar" class="roundcorners_top"> 
-          <ul class="toolbar_nav"> 
-            <li class="toolbar_document_title"> 
-              <select class="document_selector"> 
-                <option selected="selected">My Hackpad Document</option> 
-            </li> 
-            <li><a href="">Save</a></li> 
-            <li><a href="">Export &amp; Download</a></li> 
-          </ul> 
-        </div>           
-        
-        <div id="browser"> 
-<textarea class="content" onmouseup="" id="docbody"> 
-</textarea> 
-          <span id="buffer" style="display: hidden;"></span> 
-        </div> 
-      </div> 
+<div id="window"> 
+  <div id="document" class="roundcorners_top"> 
+    <div id="toolbar" class="roundcorners_top"> 
+      <ul class="toolbar_nav"> 
+        <li class="toolbar_document_title"> 
+          <select class="document_selector"> 
+            <option selected="selected">My Hackpad Document</option> 
+        </li> 
+        <li><a href="">Save</a></li> 
+        <li><a href="">Export &amp; Download</a></li> 
+      </ul> 
+    </div>           
+    
+    <div id="browser"> 
+      <textarea class="content" onmouseup="" id="docbody"></textarea> 
+      <span id="buffer" style="display: hidden;"></span> 
+    </div> 
+  </div> 
+  
+  <div id="hackpad"> 
+    
+    <div id="hackpad_title"> 
+      Hackpad
+    </div> 
+    
+    <div id="" class="hackpad_feature_focus"> 
+      <a href="" class="hackpad_feature_link"> 
+        &raquo; Magic Helper
+      </a> 
+    </div> 
+    
+    <div class="hackpad_feature_sec"> 
+      Hands Free Mode <a href="">[?]</a> 
+      <input name="auto_librarian" value="on" checked="checked" type="radio"/> 
+      <label>on</label> 
+      <input name="auto_librarian" value="off" type="radio"/> 
+      <label>off</label> 
+    </div> 
+    
+    <ol id="results"> 
       
-      <div id="hackpad"> 
-        
-        <div id="hackpad_title"> 
-          Hackpad
-        </div> 
- 
-        <div id="" class="hackpad_feature_focus"> 
-          <a href="" class="hackpad_feature_link"> 
-            &raquo; Magic Helper
-          </a> 
-        </div> 
-        
-        <div class="hackpad_feature_sec"> 
-          Hands Free Mode <a href="">[?]</a> 
-          <input name="auto_librarian" value="on" checked="checked" type="radio"/> 
-          <label>on</label> 
-          <input name="auto_librarian" value="off" type="radio"/> 
-          <label>off</label> 
-        </div> 
- 
-        <ol id="results"> 
- 
-        </ol> 
+    </ol> 
 
-	<ol id="results2">
-
-	</ol>
-
- 
     <div class="hackpad_feature_focus"> 
-        <a href="" class="hackpad_feature_link">&raquo; Document Entities:</a> 
+      <a href="" class="hackpad_feature_link">&raquo; Document Entities:</a> 
     </div> 
     <div class="hackpad_feature_sec"> 
-        <div class="entity_type_title">People:</div> 
-        <ol class="entity_results" id="list_per"> 
-        </ol> 
-        <div class="entity_type_title">Organizations:</div> 
-        <ol class="entity_results" id="list_org"> 
-        </ol> 
-        <div class="entity_type_title">Locations:</div> 
-        <ol class="entity_results" id="list_loc"> 
-        </ol> 
+      <div class="entity_type_title">People:</div> 
+      <ol class="entity_results" id="list_per"> 
+      </ol> 
+      <div class="entity_type_title">Organizations:</div> 
+      <ol class="entity_results" id="list_org"> 
+      </ol> 
+      <div class="entity_type_title">Locations:</div> 
+      <ol class="entity_results" id="list_loc"> 
+      </ol> 
     </div> 
- 
-        <div id="" class="hackpad_feature_focus"> 
-          <a href="" class="hackpad_feature_link"> 
-            &raquo; Collaborative Hackpad
-          </a> 
-        </div> 
- 
-        <div> 
-          <table> 
-            <tbody> 
-              <tr> 
-                <th>Contributor</th> 
-                <th>Status</th> 
-                <th>Screen Sharing</th> 
-              </tr> 
-              <tr> 
-                <td>Me</td> 
-                <td class="status_editing">editing</td> 
-                <td><a href="">switch to</a></td> 
-              </tr> 
- 
-              <tr> 
-                <td>Michael</td> 
-                <td class="status_editing">editing</td> 
-                <td><a href="">switch to</a></td> 
-              </tr> 
- 
-              <tr> 
-                <td>Stephen</td> 
-                <td class="status_offline">is offline</td> 
-                <td>unavailable</td> 
-              </tr> 
- 
-              <tr> 
-                <td>Thomas</td> 
-                <td class="status_viewing">viewing</td> 
-                <td><a href=""></a>current view</td> 
-              </tr> 
-            </tbody> 
-          </table> 
-        </div> 
- 
-        <div id="" class="hackpad_feature_bg"> 
-          <a href="" class="hackpad_feature_link"> 
-            &laquo; Document Formatting
-          </a> 
-        </div> 
- 
-        <div id="" class="hackpad_feature_focus"> 
-          <a href="" class="hackpad_feature_link"> 
-            &raquo; &beta;eta Hackpad Features
-          </a> 
-        </div> 
- 
-        <div id=""> 
-          <a href="">Get more out of your Hackpad!</a> 
-          <ul> 
-          </ul> 
-        </div> 
- 
-      </div> 
-      
+    
+    <div class="hackpad_feature_focus"> 
+      <a href="" class="hackpad_feature_link"> 
+        &laquo; Youtube Videos
+      </a> 
+    </div>
+    <div class="hackpad_feature_sec">
+      <ol id="youtube_results">
+
+      </ol>
     </div> 
-  </body> 
-</html>
+
+    <div id="" class="hackpad_feature_focus"> 
+      <a href="" class="hackpad_feature_link"> 
+        &laquo; Related Images
+      </a> 
+      <ol id="bing_img_results">
+      </ol>
+    </div> 
+
+    <div id="" class="hackpad_feature_bg"> 
+      <a href="" class="hackpad_feature_link"> 
+        &laquo; Document Formatting
+      </a> 
+    </div> 
+    
+    <div id="" class="hackpad_feature_focus"> 
+      <a href="" class="hackpad_feature_link"> 
+        &raquo; &beta;eta Hackpad Features
+      </a> 
+    </div> 
+    
+    <div id=""> 
+      <a href="">Get more out of your Hackpad!</a> 
+      <ul> 
+      </ul> 
+    </div> 
+    
+  </div>   
+</div> 
+
