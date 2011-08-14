@@ -47,7 +47,7 @@ $(function() {
 		    if (q.length > 0) {
 			doCI(q, 'nlp', 'ner');
 			bing_search(q);
-			zemanta(q);
+			//zemanta(q);
 		    }
 		};
 		if (event.which in DELIM_CHAR_CODES) {
@@ -56,6 +56,7 @@ $(function() {
 		    if (q.length > 0) {
 			doCI(q, 'nlp', 'ner');
 			bing_search(q);
+			//youtube_search(q);
 			//zemanta(q);
 		    }
 		}
